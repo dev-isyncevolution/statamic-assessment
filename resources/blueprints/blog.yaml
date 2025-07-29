@@ -1,0 +1,49 @@
+title: Blog Post
+
+sections:
+  main:
+    fields:
+      - handle: title
+        field:
+          type: text
+          validate: required
+
+      - handle: body
+        field:
+          type: bard
+          sets:
+            paragraph:
+              display: Paragraph
+              fields:
+                - handle: text
+                  field:
+                    type: textarea
+                    display: Text
+
+            accordion:
+              display: Accordion
+              fields:
+                - handle: accordion_title
+                  field:
+                    type: text
+                    display: Title
+                - handle: accordion_content
+                  field:
+                    type: textarea
+                    display: Content
+
+      - handle: category
+        field:
+          type: terms
+          taxonomies:
+            - categories
+
+      - handle: image
+        field:
+          type: assets
+          container: assets
+          max_files: 1
+
+      - handle: published_at
+        field:
+          type: date

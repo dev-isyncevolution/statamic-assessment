@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Latest Articles</title>
+
+  <!-- Tailwind, AlpineJS, AOS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <style>
+    [x-cloak] { display: none; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <div class="max-w-7xl mx-auto px-4 py-12" x-data="blogComponent()" x-init="init()">
+    <h1 class="text-3xl sm:text-5xl font-extrabold text-center text-gray-900 mb-12 tracking-tight">
+      Latest Articles
+    </h1>
+
+    {{ partial:blog/filter }}
+    {{ partial:blog/grid }}
+    {{ partial:blog/load-more }}
+  </div>
+
+  <script>
+    // Initialize AOS on page load
+    function initAOS() {
+      AOS.init({ duration: 500, easing: 'ease-out', once: true });
+    }
+
+    document.addEventListener("DOMContentLoaded", initAOS);
+
+    // Refresh AOS animations when returning via back/forward buttons (bfcache)
+    window.addEventListener("pageshow", (event) => {
+      if (event.persisted) {
+        AOS.refresh();
+      }
+    });
+  </script>
+
+  <script>
+    function blogComponent() {
+      return {
+        blogs: [],
+        selectedCategory: 'All',
+        categories: [],
+        page: 1,
+        perPage: 6,
+        hasMore: true,
+
+        async init() {
+          const res = await fetch('/api/collections/blog/entries');
+          const json = await res.json();
+          const data = json.data;
+
+          this.blogs = data
+            .filter(entry => entry.title)
+            .map((entry, index) => ({
+              id: entry.id,
+              data: {
+                title: entry.title ?? `Untitled Post ${index + 1}`,
+                excerpt: entry.content?.replace(/(<([^>]+)>)/gi, "").substring(0, 120) ?? 'No content available.',
+                featured_image: entry.image?.[0]
+                  ? `/assets/images/${entry.image[0]}`
+                  : `https://picsum.photos/seed/${index + 1}/600/400`
+              },
+              slug: entry.slug,
+              taxonomies: {
+                categories: entry.category?.[0] ?? 'General'
+              }
+            }));
+
+          this.categories = [...new Set(this.blogs.map(b => b.taxonomies.categories))];
+
+          this.$nextTick(() => AOS.refresh());
+        },
+
+        get filteredBlogs() {
+          const filtered = this.selectedCategory === 'All'
+            ? this.blogs
+            : this.blogs.filter(b => b.taxonomies.categories === this.selectedCategory);
+
+          const sliced = filtered.slice(0, this.page * this.perPage);
+          this.hasMore = sliced.length < filtered.length;
+          return sliced;
+        },
+
+        loadMore() {
+          this.page++;
+          this.$nextTick(() => AOS.refresh());
+        },
+
+        setCategory(category) {
+          this.selectedCategory = category;
+          this.page = 1;
+          this.$nextTick(() => AOS.refresh());
+        }
+      }
+    }
+  </script>
+</body>
+</html>

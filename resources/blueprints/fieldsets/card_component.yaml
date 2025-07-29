@@ -1,0 +1,38 @@
+title: Card Component
+tabs:
+  main:
+    display: Main
+    sections:
+      - fields:
+          - handle: images
+            field:
+              type: assets
+              container: assets
+              max_files: 5
+              mode: grid
+              display: Carousel Images
+
+          - handle: content
+            field:
+              type: bard
+              sets:
+                accordion:
+                  display: Accordion
+                  fields:
+                    - handle: title
+                      field:
+                        type: text
+                    - handle: description
+                      field:
+                        type: textarea
+                icon_list:
+                  display: Icon List
+                  fields:
+                    - handle: icon
+                      field:
+                        type: text
+                        instructions: "Heroicons/Lucide icon name"
+                    - handle: item
+                      field:
+                        type: text
+              display: Rich Content

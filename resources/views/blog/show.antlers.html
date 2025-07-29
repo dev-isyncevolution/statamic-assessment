@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ title ?? 'Blog Post' }}</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <style>
+    @keyframes bgGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+
+<body
+  class="min-h-screen text-gray-900 bg-gradient-to-r from-[#cfffff] via-[#bae0f5] to-[#cfffff] bg-[length:300%_300%] animate-[bgGradient_20s_ease-in-out_infinite]"
+  x-data
+  x-init="AOS.init({ duration: 600, once: true })"
+>
+
+  <div class="max-w-4xl mx-auto py-5 px-4" data-aos="fade-up">
+    <h1 class="text-2xl md:text-4xl font-bold mb-6">
+      {{ title ?? 'Untitled Post' }}
+    </h1>
+
+    {{ partial:blog-detail/swiper }}
+
+    {{ partial:blog-detail/content }}
+
+  </div>
+
+  <div class="py-5">
+    <div class="max-w-4xl mx-auto px-4">
+      {{ partial:blog-detail/accordion }}
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+title: Features
+sections:
+  main:
+    fields:
+      - handle: content
+        field:
+          type: bard
+          sets:
+            icon_list:
+              display: Icon List
+              fields:
+                - handle: items
+                  field:
+                    type: list
+                    instructions: List with icons
+            accordion:
+              display: Accordion
+              fields:
+                - handle: heading
+                  field:
+                    type: text
+                - handle: body
+                  field:
+                    type: textarea

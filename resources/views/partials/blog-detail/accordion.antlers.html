@@ -1,0 +1,55 @@
+<div
+  x-data="accordionComponent()"
+  x-init="calculateHeights()"
+  class="rounded-md divide-y"
+  data-aos="fade-up"
+  data-aos-delay="200"
+>
+  <template x-for="(item, index) in accordionItems" :key="index">
+    <div
+      class="rounded-md overflow-hidden mt-4 shadow bg-white transition-all duration-300"
+      :data-aos="'fade-up'"
+      :data-aos-delay="(index + 1) * 100"
+    >
+      <button
+        @click="toggle(index)"
+        class="flex w-full items-center justify-between px-5 py-3 bg-purple-200 text-left text-gray-900 font-semibold text-base leading-7 rounded-md transition"
+        :class="{ 'rounded-b-none': openIndex === index }"
+        :aria-expanded="openIndex === index"
+      >
+        <span x-text="item.accordion_title"></span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform transition-transform" :class="openIndex === index ? 'rotate-180 scale-110 text-purple-700' : 'rotate-0 text-gray-800'" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path x-show="openIndex === index" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"/>
+          <path x-show="openIndex !== index" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+        </svg>
+      </button>
+      <div
+        x-ref="el => refs[index] = el"
+        class="overflow-hidden transition-all duration-700 ease-in-out px-5 bg-white"
+        :style="openIndex === index ? 'max-height: 500px;' : 'max-height: 0px;'"
+      >
+        <div class="py-4 text-gray-700 transition-opacity transform duration-500" :class="openIndex === index ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'">
+          <span x-text="item.accordion_content"></span>
+        </div>
+      </div>
+    </div>
+  </template>
+</div>
+
+<script>
+  function accordionComponent() {
+    return {
+      openIndex: null,
+      refs: [],
+      accordionItems: {{ accordions | json }},
+      toggle(index) {
+        this.openIndex = this.openIndex === index ? null : index;
+      },
+      calculateHeights() {
+        this.$nextTick(() => {
+          this.refs = this.$el.querySelectorAll('[x-ref]');
+        });
+      },
+    };
+  }
+</script>

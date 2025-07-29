@@ -1,0 +1,18 @@
+<div class="flex flex-wrap justify-center mb-10 gap-3">
+  <button
+    @click="setCategory('All')"
+    :class="{ 'bg-purple-600 text-white': selectedCategory === 'All', 'bg-purple-100 text-purple-800': selectedCategory !== 'All' }"
+    class="px-4 py-2 rounded-md text-sm font-semibold transition duration-200 hover:scale-105"
+  >
+    All
+  </button>
+
+  <template x-for="category in categories" :key="category">
+    <button
+      @click="setCategory(category)"
+      x-text="category"
+      :class="{ 'bg-purple-600 text-white': selectedCategory === category, 'bg-purple-100 text-purple-800': selectedCategory !== category }"
+      class="px-4 py-2 rounded-md text-sm font-semibold transition duration-200 hover:scale-105"
+    ></button>
+  </template>
+</div>

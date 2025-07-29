@@ -1,0 +1,19 @@
+{{ if content }}
+  <div class="mb-4 text-sm text-gray-500 flex items-center gap-4" data-aos="fade-up" data-aos-delay="100">
+    <span>{{ published_at format="F j, Y" }}</span>
+     {{ if category }}
+      <span class="inline-block px-2 py-1 bg-gray-200 rounded text-xs font-medium text-gray-700">
+        {{ category limit="1" }}{{ value }}{{ /category }}
+      </span>
+    {{ else }}
+      <span class="inline-block px-2 py-1 bg-gray-100 rounded text-xs text-gray-500">General</span>
+    {{ /if }}
+
+  </div>
+
+  <div class="prose max-w-none mb-2 transition-opacity duration-500 ease-in-out" data-aos="fade-up" data-aos-delay="150">
+    {{ content }}
+  </div>
+{{ else }}
+  <p class="text-gray-500">No content available.</p>
+{{ /if }}

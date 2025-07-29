@@ -1,0 +1,8 @@
+title: Blog
+route: /blog/{slug}
+template: blog/show
+layout: layout
+taxonomies:
+  - categories
+blueprints:
+  - blog
