@@ -6,12 +6,14 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateRoleUserTable extends Migration
 {
-     public function up()
+    public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
+        Schema::create('role_user', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('role_id');
             $table->timestamps();
+
         });
     }
 
@@ -20,4 +22,3 @@ class CreateRoleUserTable extends Migration
         Schema::dropIfExists('role_user');
     }
 }
-
