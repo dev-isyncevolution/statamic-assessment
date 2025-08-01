@@ -72,14 +72,14 @@ php artisan key:generate (Optional)
 # 5. Start local server
 php artisan serve  
 
-🔗 API Endpoints
+🔗 API Endpoints   
 View Blog Collection:
- http://localhost:8000/cp/auth/login 
-    Email: john.doe@gmail.com   
-    Password: Demo@123 
+ http://localhost:8000/cp/auth/login  
+    Email: john.doe@gmail.com  
+    Password: Demo@123  
 
 Create Collections  
-http://localhost:8000/cp/collections/create  
+http://localhost:8000/cp/collections/create   
 Title - blog  
 Submit  
 
