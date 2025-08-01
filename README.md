@@ -61,38 +61,38 @@ Installation
 Installation
 # 1. Clone the repository
 git clone https://github.com/dev-isyncevolution/statamic-assessment.git
-cd statamic-site
+cd statamic-assessment  
 mv .env.example .env
 
 
 # 2. Install dependencies
-composer update / composer install
-npm install
-php artisan migrate
+composer update / composer install  
+npm install  
+php artisan migrate  
 
 # 3. Build assets
-php artisan migrate
-php artisan db:seed --class=UserSeeder
+php artisan migrate  
+php artisan db:seed --class=UserSeeder  
 
 # 4. Generate Key
-php artisan key:generate
+php artisan key:generate  
 
 # 5. Refresh Statamic
-php artisan statamic:stache:clear
-php artisan statamic:stache:refresh
+php artisan statamic:stache:clear  
+php artisan statamic:stache:refresh  
 
 # 6. Start local server
-php artisan serve
+php artisan serve  
 
-Email: john.doe@gmail.com
+Email: john.doe@gmail.com  
 Password: Demo@123
 
 
 
 🧪 Usage
 Visit:
- 👉 http://localhost:8000/blog – to view latest blog posts
- 👉 http://localhost:8000/blog/{slug} – to view single post
+ 👉 http://localhost:8000/blog – to view latest blog posts   
+ 👉 http://localhost:8000/blog/{slug} – to view single post   
 
 📦 Dependencies
 Statamic CMS
