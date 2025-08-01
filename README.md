@@ -53,7 +53,7 @@ API for Blog Entries:
 
 Installation  
 # 1. Clone the repository
-git clone https://github.com/dev-isyncevolution/statamic-assessment.git
+git clone https://github.com/dev-isyncevolution/statamic-assessment.git  
 cd statamic-assessment  
 mv .env.example .env
 
@@ -74,14 +74,14 @@ php artisan serve
 
 🔗 API Endpoints
 View Blog Collection:
- http://localhost:8000/cp/auth/login
-    Email: john.doe@gmail.com  
-    Password: Demo@123
+ http://localhost:8000/cp/auth/login 
+    Email: john.doe@gmail.com   
+    Password: Demo@123 
 
-Create Collections
-http://localhost:8000/cp/collections/create
-Title - blog
-Submit
+Create Collections  
+http://localhost:8000/cp/collections/create  
+Title - blog  
+Submit  
 
 🧪 Usage
 Visit:
