@@ -17,24 +17,21 @@ This project is a dynamic blog built with Statamic, Alpine.js, and TailwindCSS, 
 📁 File Structure
 
 /resources/views
-├── blog/
-│   ├── index.antlers.html        # Blog listing page
-│   └── show.antlers.html         # Single blog post detail
-├── layout.antlers.html           # Global site layout
-├── partials/
-│   ├── blog/
-│   │   ├── card.antlers.html         # Individual post card
-│   │   ├── filter.antlers.html       # Category filter UI
-│   │   ├── grid.antlers.html         # Blog grid layout
-│   │   └── load-more.antlers.html    # "Load More" button
-│   └── blog-detail/
-│       ├── accordion.antlers.html    # Accordion block
-│       ├── content.antlers.html      # Bard content renderer
-│       └── swiper.antlers.html       # Swiper carousel integration
-└── welcome.blade.php                 # Laravel's default welcome page
-
-
-
+├── blog/ 
+│   ├── index.antlers.html        # Blog listing page 
+│   └── show.antlers.html         # Single blog post detail 
+├── layout.antlers.html           # Global site layout 
+├── partials/ 
+│   ├── blog/ 
+│   │   ├── card.antlers.html         # Individual post card 
+│   │   ├── filter.antlers.html       # Category filter UI 
+│   │   ├── grid.antlers.html         # Blog grid layout 
+│   │   └── load-more.antlers.html    # "Load More" button 
+│   └── blog-detail/ 
+│       ├── accordion.antlers.html    # Accordion block 
+│       ├── content.antlers.html      # Bard content renderer 
+│       └── swiper.antlers.html       # Swiper carousel integration 
+└── welcome.blade.php                 # Laravel's default welcome page 
 
 
 🧩 Dynamic Content Cards with Bard
@@ -50,15 +47,11 @@ Clean typography
 Smooth hover effects
 Card hover shadows and transitions
 Mobile-first responsive layout
-🔗 API Endpoints
-View Blog Collection:
- http://localhost:8000/cp/collections/blog
-
 
 API for Blog Entries:
  http://localhost:8000/api/collections/blog/entries
-Installation
-Installation
+
+Installation  
 # 1. Clone the repository
 git clone https://github.com/dev-isyncevolution/statamic-assessment.git
 cd statamic-assessment  
@@ -67,27 +60,28 @@ mv .env.example .env
 
 # 2. Install dependencies
 composer update / composer install  
-npm install  
-php artisan migrate  
+npm install    
 
 # 3. Build assets
 php artisan migrate  
 php artisan db:seed --class=UserSeeder  
 
 # 4. Generate Key
-php artisan key:generate  
+php artisan key:generate (Optional)     
 
-# 5. Refresh Statamic
-php artisan statamic:stache:clear  
-php artisan statamic:stache:refresh  
-
-# 6. Start local server
+# 5. Start local server
 php artisan serve  
 
-Email: john.doe@gmail.com  
-Password: Demo@123
+🔗 API Endpoints
+View Blog Collection:
+ http://localhost:8000/cp/auth/login
+    Email: john.doe@gmail.com  
+    Password: Demo@123
 
-
+Create Collections
+http://localhost:8000/cp/collections/create
+Title - blog
+Submit
 
 🧪 Usage
 Visit:
@@ -95,8 +89,8 @@ Visit:
  👉 http://localhost:8000/blog/{slug} – to view single post   
 
 📦 Dependencies
-Statamic CMS
-TailwindCSS
-Alpine.js
-Swiper.js
+Statamic CMS 
+TailwindCSS 
+Alpine.js 
+Swiper.js 
 
