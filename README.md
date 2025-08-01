@@ -1,65 +1,102 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Statamic Blog with Alpine.js & TailwindCSS
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This project is a dynamic blog built with Statamic, Alpine.js, and TailwindCSS, supporting filtered categories and paginated content.
 
-## About Laravel
+🚀 Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Dynamic blog listing from Statamic Collection API
+- Category filtering
+- "Load more" pagination
+- Accordion blocks in blog detail pages
+- Responsive layout with TailwindCSS
+- Real asset-based image loading
+- Swiper.js image carousels
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+📁 File Structure
 
-## Learning Laravel
+/resources/views
+├── blog/
+│   ├── index.antlers.html        # Blog listing page
+│   └── show.antlers.html         # Single blog post detail
+├── layout.antlers.html           # Global site layout
+├── partials/
+│   ├── blog/
+│   │   ├── card.antlers.html         # Individual post card
+│   │   ├── filter.antlers.html       # Category filter UI
+│   │   ├── grid.antlers.html         # Blog grid layout
+│   │   └── load-more.antlers.html    # "Load More" button
+│   └── blog-detail/
+│       ├── accordion.antlers.html    # Accordion block
+│       ├── content.antlers.html      # Bard content renderer
+│       └── swiper.antlers.html       # Swiper carousel integration
+└── welcome.blade.php                 # Laravel's default welcome page
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+🧩 Dynamic Content Cards with Bard
 
-### Premium Partners
+Alpine.js Interactivity
+Expandable card sections
+Accordions for content grouping
+Animated transitions
+Swiper.js
+Responsive image carousel inside content cards
+TailwindCSS Styling
+Clean typography
+Smooth hover effects
+Card hover shadows and transitions
+Mobile-first responsive layout
+🔗 API Endpoints
+View Blog Collection:
+ http://localhost:8000/cp/collections/blog
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
 
-## Contributing
+API for Blog Entries:
+ http://localhost:8000/api/collections/blog/entries
+Installation
+Installation
+# 1. Clone the repository
+git clone https://github.com/dev-isyncevolution/statamic-assessment.git
+cd statamic-site
+mv .env.example .env
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+# 2. Install dependencies
+composer update / composer install
+npm install
+php artisan migrate
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# 3. Build assets
+php artisan migrate
+php artisan db:seed --class=UserSeeder
 
-## Security Vulnerabilities
+# 4. Generate Key
+php artisan key:generate
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# 5. Refresh Statamic
+php artisan statamic:stache:clear
+php artisan statamic:stache:refresh
 
-## License
+# 6. Start local server
+php artisan serve
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# statamic-app
-# statamic-app
-# statamic-app
-# statamic-app
+Email: john.doe@gmail.com
+Password: Demo@123
+
+
+
+🧪 Usage
+Visit:
+ 👉 http://localhost:8000/blog – to view latest blog posts
+ 👉 http://localhost:8000/blog/{slug} – to view single post
+
+📦 Dependencies
+Statamic CMS
+TailwindCSS
+Alpine.js
+Swiper.js
+
