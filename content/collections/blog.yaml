@@ -1,0 +1,8 @@
+title: Blog
+handle: blog
+route: /blog/{slug}
+template: blog
+paginate: true
+per_page: 6
+sort_field: published_at
+sort_dir: desc
