@@ -1,5 +1,6 @@
 title: Pages
-route: '{slug}'
-blueprint: page
-sort_by: title
-template: default
+handle: pages
+route: /blog
+template: page
+sort_field: title
+sort_dir: asc
