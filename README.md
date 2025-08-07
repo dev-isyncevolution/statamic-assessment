@@ -70,8 +70,15 @@ php artisan db:seed --class=UserSeeder
 php artisan key:generate (Optional)     
    
 # 5. Refresh Statamic’s cache 
-php artisan statamic:stache:clear   
-php artisan statamic:stache:refresh 
+php artisan statamic:stache:clear      
+php artisan statamic:stache:refresh    
+php artisan statamic:eloquent:import-collections   
+
+     Do you want to import collections? (yes/no) [no]:      
+     > yes     
+
+     Do you want to import collections trees? (yes/no) [no]:      
+     > no      
 
 # 6. Start local server
 php artisan serve  
