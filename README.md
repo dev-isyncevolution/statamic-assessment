@@ -69,7 +69,11 @@ php artisan db:seed --class=UserSeeder
 # 4. Generate Key
 php artisan key:generate (Optional)     
 
-# 5. Start local server
+# 5. Refresh Statamic’s cache
+php artisan statamic:stache:clear 
+php artisan statamic:stache:refresh 
+
+# 6. Start local server
 php artisan serve  
 
 🔗 API Endpoints   

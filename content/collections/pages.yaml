@@ -1,6 +1,6 @@
 title: Pages
 handle: pages
-route: /{slug}
+route: /blog
 template: page
 sort_field: title
 sort_dir: asc
