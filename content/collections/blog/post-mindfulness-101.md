@@ -5,6 +5,8 @@ title: "Mindfulness 101: How to Be Present"
 slug: post-mindfulness-101
 image:
   - my-folder/mindfulness.jpg
+template: blog/show
+published: true
 published_at: 2025-07-16T07:30:00+00:00
 category:
   - lifestyle

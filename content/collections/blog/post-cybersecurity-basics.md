@@ -5,6 +5,8 @@ title: "Cybersecurity Basics Everyone Should Know"
 slug: post-cybersecurity-basics
 image:
   - my-folder/cyber-basics.jpg
+template: blog/show
+published: true
 published_at: 2025-07-11T10:45:00+00:00
 category:
   - tech

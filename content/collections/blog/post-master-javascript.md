@@ -5,6 +5,8 @@ title: "Mastering JavaScript in 30 Days"
 slug: post-master-javascript
 image:
   - my-folder/js-master.jpg
+template: blog/show
+published: true
 published_at: 2025-07-16T10:45:00+00:00
 category:
   - tutorials

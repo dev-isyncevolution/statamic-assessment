@@ -1,0 +1,26 @@
+{{ layout:layout }}
+
+<div class="container mx-auto px-4 py-8 max-w-7xl">
+  <h1 class="text-3xl sm:text-5xl font-extrabold text-center text-gray-900 mb-6 tracking-tight">
+    {{ title }}
+  </h1>
+
+  {{ partial:blog/filter }}
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-list">
+    {{ collection:blog }}
+      {{ partial:blog/card }}
+    {{ /collection:blog }}
+  </div>
+
+  {{ partial:blog/load_more }}
+
+  {{ if no_results }}
+    <div class="text-center mt-16" data-aos="fade-up">
+      <p class="text-gray-600 text-lg mb-4">No blog posts found.</p>
+      <a href="/cp/collections/blog" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 no-underline">
+        Create your first blog post
+      </a>
+    </div>
+  {{ /if }}
+</div>

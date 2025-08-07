@@ -5,6 +5,8 @@ title: "Event Marketing Strategies That Work"
 slug: post-event-marketing-strategies
 image:
   - my-folder/event-marketing.jpg
+template: blog/show
+published: true
 published_at: 2025-07-06T13:20:00+00:00
 category:
   - events

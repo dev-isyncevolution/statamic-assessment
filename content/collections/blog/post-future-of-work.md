@@ -5,6 +5,8 @@ title: "The Future of Work: What’s Changing?"
 slug: post-future-of-work
 image:
   - my-folder/future-work.jpg
+template: blog/show
+published: true
 published_at: 2025-07-12T09:00:00+00:00
 category:
   - news

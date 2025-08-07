@@ -5,6 +5,8 @@ title: "10 Web Development Tips You Should Know"
 slug: post-web-dev-tips
 image:
   - my-folder/web-dev-tips.jpg
+template: blog/show
+published: true
 published_at: 2025-07-21T10:20:00+00:00
 category:
   - tutorials

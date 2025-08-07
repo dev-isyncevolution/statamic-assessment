@@ -5,6 +5,8 @@ title: "Why AI Will Never Replace Human Creativity"
 slug: post-opinion-ai
 image:
   - my-folder/ai-vs-creativity.jpg
+template: blog/show
+published: true
 published_at: 2025-07-19T08:00:00+00:00
 category:
   - opinion

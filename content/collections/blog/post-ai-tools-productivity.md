@@ -5,6 +5,8 @@ title: "Best AI Tools to Boost Productivity"
 slug: post-ai-tools-productivity
 image:
   - my-folder/ai-tools.jpg
+template: blog/show
+published: true
 published_at: 2025-07-08T14:00:00+00:00
 category:
   - tutorials

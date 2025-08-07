@@ -5,6 +5,8 @@ title: "10 Healthy Habits for a Better Life"
 slug: post-healthy-habits
 image:
   - my-folder/healthy-habits.jpg
+template: blog/show
+published: true
 published_at: 2025-07-22T08:30:00+00:00
 category:
   - lifestyle

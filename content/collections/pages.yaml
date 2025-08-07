@@ -1,0 +1,6 @@
+title: Pages
+handle: pages
+route: /{slug}
+template: page
+sort_field: title
+sort_dir: asc

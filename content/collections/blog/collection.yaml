@@ -4,5 +4,4 @@ template: blog/show
 layout: layout
 taxonomies:
   - categories
-blueprints:
-  - blog
+blueprint: blog

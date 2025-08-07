@@ -5,6 +5,8 @@ title: "Top 10 Travel Tech Essentials for 2025"
 slug: post-travel-tech-essentials
 image:
   - my-folder/travel-tech.jpg
+template: blog/show
+published: true
 published_at: 2025-07-05T11:00:00+00:00
 category:
   - lifestyle

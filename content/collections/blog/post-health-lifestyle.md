@@ -5,6 +5,8 @@ title: "Simple Lifestyle Habits That Boost Health"
 slug: post-health-lifestyle
 image:
   - my-folder/lifestyle-health.jpg
+template: blog/show
+published: true
 published_at: 2025-07-24T11:30:00+00:00
 category:
   - lifestyle

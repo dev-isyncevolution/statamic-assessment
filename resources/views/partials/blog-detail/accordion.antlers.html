@@ -1,40 +1,66 @@
-<div
+<section
   x-data="accordionComponent()"
   x-init="calculateHeights()"
-  class="rounded-md divide-y"
+  class="bg-white shadow-lg rounded-lg p-6"
   data-aos="fade-up"
-  data-aos-delay="200"
+  data-aos-duration="800"
+  data-aos-easing="ease-in-out"
 >
+  <h2 class="text-xl font-semibold text-gray-900 border-b border-gray-300 pb-3 mb-6">
+    Additional Information
+  </h2>
+
   <template x-for="(item, index) in accordionItems" :key="index">
     <div
-      class="rounded-md overflow-hidden mt-4 shadow bg-white transition-all duration-300"
-      :data-aos="'fade-up'"
-      :data-aos-delay="(index + 1) * 100"
+      class="mb-4 rounded-md shadow-sm overflow-hidden border border-gray-200"
+      :class="openIndex === index ? 'bg-purple-50 border-purple-300' : 'bg-white'"
+      data-aos="fade"
+      data-aos-delay="100"
+      data-aos-duration="600"
     >
       <button
         @click="toggle(index)"
-        class="flex w-full items-center justify-between px-5 py-3 bg-purple-200 text-left text-gray-900 font-semibold text-base leading-7 rounded-md transition"
-        :class="{ 'rounded-b-none': openIndex === index }"
+        class="flex items-center justify-between w-full px-5 py-4 font-semibold text-purple-800
+               focus:outline-none focus:ring-2 focus:ring-purple-500 transition-colors
+               hover:bg-purple-100 rounded-md"
         :aria-expanded="openIndex === index"
+        :class="{ 'rounded-b-none': openIndex === index }"
       >
-        <span x-text="item.accordion_title"></span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform transition-transform" :class="openIndex === index ? 'rotate-180 scale-110 text-purple-700' : 'rotate-0 text-gray-800'" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path x-show="openIndex === index" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"/>
-          <path x-show="openIndex !== index" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+        <span x-text="item.accordion_title" class="text-lg"></span>
+        <svg xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 transform transition-transform duration-300"
+          :class="openIndex === index ? 'rotate-180 text-purple-600' : 'rotate-0 text-purple-900'"
+          fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+        >
+          <path x-show="openIndex === index" stroke-linecap="round" stroke-linejoin="round" d="M20 12H4"/>
+          <path x-show="openIndex !== index" stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
         </svg>
       </button>
+
       <div
         x-ref="el => refs[index] = el"
-        class="overflow-hidden transition-all duration-700 ease-in-out px-5 bg-white"
-        :style="openIndex === index ? 'max-height: 500px;' : 'max-height: 0px;'"
+        class="px-5 overflow-hidden"
+        x-bind:style="openIndex === index ? `max-height: ${refs[index]?.scrollHeight}px` : 'max-height: 0px'"
+        x-transition:enter="transition-all duration-700 ease-in-out"
+        x-transition:leave="transition-all duration-700 ease-in-out"
       >
-        <div class="py-4 text-gray-700 transition-opacity transform duration-500" :class="openIndex === index ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'">
+        <div
+          class="py-4 text-gray-700 text-base leading-relaxed transition-opacity transform duration-500"
+          x-show="openIndex === index"
+          x-transition:enter="opacity-0 -translate-y-2"
+          x-transition:enter-start="opacity-0 -translate-y-2"
+          x-transition:enter-end="opacity-100 translate-y-0"
+          x-transition:leave="opacity-100 translate-y-0"
+          x-transition:leave-start="opacity-100 translate-y-0"
+          x-transition:leave-end="opacity-0 -translate-y-2"
+          style="display: none;"
+        >
           <span x-text="item.accordion_content"></span>
         </div>
       </div>
     </div>
   </template>
-</div>
+</section>
 
 <script>
   function accordionComponent() {
@@ -44,6 +70,10 @@
       accordionItems: {{ accordions | json }},
       toggle(index) {
         this.openIndex = this.openIndex === index ? null : index;
+        this.$nextTick(() => {
+          // Recalculate max-heights on toggle for smooth transitions
+          this.refs = this.$el.querySelectorAll('[x-ref]');
+        });
       },
       calculateHeights() {
         this.$nextTick(() => {

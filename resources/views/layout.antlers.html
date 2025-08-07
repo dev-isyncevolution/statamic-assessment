@@ -1,12 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>{{ title }}</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ title ?? site:name }}</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <style>
+    [x-cloak] { display: none; }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-  {{ yield:content }}
+<body class="bg-white text-gray-900">
+  <div class="container mx-auto px-4 py-8">
+    {{ template_content }}
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      AOS.init({
+        duration: 600,
+        easing: 'ease-out',
+        once: true
+      });
+    });
+
+    window.addEventListener("pageshow", function (event) {
+      if (event.persisted) {
+        AOS.refresh();
+      }
+    });
+  </script>
+
+  <script>
+   document.addEventListener('DOMContentLoaded', () => {
+      const swiperEl = document.querySelector('.mySwiper');
+      if (!swiperEl) return;
+
+      const slides = swiperEl.querySelectorAll('.swiper-slide');
+      if (slides.length === 1) {
+        const clone = slides[0].cloneNode(true);
+        swiperEl.querySelector('.swiper-wrapper').appendChild(clone);
+      }
+
+      new Swiper(".mySwiper", {
+      loop: true,
+          effect: 'coverflow',
+          coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          },
+          speed: 700,
+          navigation: {
+            nextEl: ".swiper-button-next1",
+            prevEl: ".swiper-button-prev1",
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          keyboard: true,
+        });
+    });
+  </script>
 </body>
 </html>

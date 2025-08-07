@@ -5,6 +5,8 @@ title: "Building a Startup From Scratch"
 slug: post-building-a-startup
 image:
   - my-folder/startup-build.jpg
+template: blog/show
+published: true
 published_at: 2025-07-07T09:45:00+00:00
 category:
   - lifestyle

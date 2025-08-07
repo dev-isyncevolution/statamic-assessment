@@ -5,6 +5,8 @@ title: "Personal Branding: Why It Matters More Than Ever"
 slug: post-personal-branding
 image:
   - my-folder/personal-brand.jpg
+template: blog/show
+published: true
 published_at: 2025-07-09T12:15:00+00:00
 category:
   - opinion

@@ -5,6 +5,8 @@ title: "The Ultimate Tech Event Guide for 2025"
 slug: post-event-guide-2025
 image:
   - my-folder/events-guide.jpg
+template: blog/show
+published: true
 published_at: 2025-07-19T16:00:00+00:00
 category:
   - events

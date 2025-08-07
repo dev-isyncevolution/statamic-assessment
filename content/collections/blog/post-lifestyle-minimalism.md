@@ -5,6 +5,8 @@ title: "Minimalism: A Lifestyle for Focus and Freedom"
 slug: post-lifestyle-minimalism
 image:
   - my-folder/minimalism.jpg
+template: blog/show
+published: true
 published_at: 2025-07-14T15:30:00+00:00
 category:
   - lifestyle

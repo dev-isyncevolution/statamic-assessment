@@ -5,6 +5,8 @@ title: "Content Creation: The Complete Beginner’s Guide"
 slug: post-content-creation-guide
 image:
   - my-folder/content-creation.jpg
+template: blog/show
+published: true
 published_at: 2025-07-18T09:00:00+00:00
 category:
   - tutorials

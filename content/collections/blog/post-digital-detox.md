@@ -5,6 +5,8 @@ title: "Why You Need a Digital Detox"
 slug: post-digital-detox
 image:
   - my-folder/digital-detox.jpg
+template: blog/show
+published: true
 published_at: 2025-07-17T11:15:00+00:00
 category:
   - opinion

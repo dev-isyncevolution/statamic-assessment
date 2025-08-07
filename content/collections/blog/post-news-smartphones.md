@@ -5,6 +5,8 @@ title: "The Future of Smartphones in 2026"
 slug: post-news-smartphones
 image:
   - my-folder/future-smartphones.jpg
+template: blog/show
+published: true
 published_at: 2025-07-17T12:00:00+00:00
 category:
   - news

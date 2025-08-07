@@ -5,6 +5,8 @@ title: "Eco-Friendly Tech Trends for a Greener Tomorrow"
 slug: post-eco-tech-trends
 image:
   - my-folder/eco-tech.jpg
+template: blog/show
+published: true
 published_at: 2025-07-10T08:30:00+00:00
 category:
   - tech

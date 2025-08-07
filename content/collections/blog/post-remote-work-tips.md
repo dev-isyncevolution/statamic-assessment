@@ -5,6 +5,8 @@ title: "Remote Work: Tips for Staying Productive"
 slug: post-remote-work-tips
 image:
   - my-folder/remote-work.jpg
+template: blog/show
+published: true
 published_at: 2025-07-20T14:00:00+00:00
 category:
   - lifestyle

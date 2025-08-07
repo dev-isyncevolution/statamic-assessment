@@ -5,6 +5,8 @@ title: "How to Start Coding: A Beginner's Guide"
 slug: post-beginner-coding-guide
 image:
   - my-folder/beginner-coding.jpg
+template: blog/show
+published: true
 published_at: 2025-07-04T16:00:00+00:00
 category:
   - tutorials

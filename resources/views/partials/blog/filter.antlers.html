@@ -1,18 +1,19 @@
-<div class="flex flex-wrap justify-center mb-10 gap-3">
+<div id="category-filters" class="flex flex-wrap justify-center gap-3 mb-12">
   <button
-    @click="setCategory('All')"
-    :class="{ 'bg-purple-600 text-white': selectedCategory === 'All', 'bg-purple-100 text-purple-800': selectedCategory !== 'All' }"
-    class="px-4 py-2 rounded-md text-sm font-semibold transition duration-200 hover:scale-105"
+    class="category-btn bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-semibold transition"
+    data-category="all"
+    aria-pressed="true"
   >
     All
   </button>
 
-  <template x-for="category in categories" :key="category">
+  {{ taxonomy:categories }}
     <button
-      @click="setCategory(category)"
-      x-text="category"
-      :class="{ 'bg-purple-600 text-white': selectedCategory === category, 'bg-purple-100 text-purple-800': selectedCategory !== category }"
-      class="px-4 py-2 rounded-md text-sm font-semibold transition duration-200 hover:scale-105"
-    ></button>
-  </template>
+      class="category-btn bg-purple-100 text-purple-700 px-4 py-1 rounded-full text-sm font-semibold transition hover:bg-purple-200"
+      data-category="{{ slug | lower }}"
+      aria-pressed="false"
+    >
+      {{ title }}
+    </button>
+  {{ /taxonomy:categories }}
 </div>

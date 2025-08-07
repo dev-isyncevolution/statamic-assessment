@@ -5,6 +5,8 @@ title: "Top Tech Trends to Watch in 2025"
 slug: post-tech-trends-2025
 image:
   - my-folder/tech-trends.jpg
+template: blog/show
+published: true
 published_at: 2025-07-21T10:00:00+00:00
 category:
   - tech

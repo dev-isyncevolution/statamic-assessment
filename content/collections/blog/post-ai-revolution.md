@@ -5,6 +5,8 @@ title: "The AI Revolution: What You Need to Know"
 slug: post-ai-revolution
 image:
   - my-folder/ai-revolution.jpg
+template: blog/show
+published: true
 published_at: 2025-07-23T09:00:00+00:00
 category:
   - news

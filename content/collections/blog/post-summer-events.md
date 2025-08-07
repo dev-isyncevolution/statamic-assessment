@@ -5,6 +5,8 @@ title: "Top Events to Attend This Summer"
 slug: post-summer-events
 image:
   - my-folder/summer-events.jpg
+template: blog/show
+published: true
 published_at: 2025-07-22T16:15:00+00:00
 category:
   - events

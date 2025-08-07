@@ -2,15 +2,18 @@ title: Blog Post
 
 sections:
   main:
+    display: Main
     fields:
       - handle: title
         field:
           type: text
+          display: Title
           validate: required
 
       - handle: body
         field:
           type: bard
+          display: Body
           sets:
             paragraph:
               display: Paragraph
@@ -32,18 +35,21 @@ sections:
                     type: textarea
                     display: Content
 
-      - handle: category
+      - handle: categories   
         field:
           type: terms
+          display: Categories
           taxonomies:
             - categories
 
       - handle: image
         field:
           type: assets
+          display: Image
           container: assets
           max_files: 1
 
       - handle: published_at
         field:
           type: date
+          display: Published Date

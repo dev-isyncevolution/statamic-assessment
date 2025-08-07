@@ -5,6 +5,8 @@ title: "The Creator Economy: A New Way to Work"
 slug: post-the-creators-economy
 image:
   - my-folder/creator-economy.jpg
+template: blog/show
+published: true
 published_at: 2025-07-03T10:10:00+00:00
 category:
   - opinion

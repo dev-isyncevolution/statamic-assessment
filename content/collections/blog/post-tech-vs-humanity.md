@@ -5,6 +5,8 @@ title: "Tech vs Humanity: Finding Balance"
 slug: post-tech-vs-humanity
 image:
   - my-folder/tech-human.jpg
+template: blog/show
+published: true
 published_at: 2025-07-13T10:20:00+00:00
 category:
   - opinion
